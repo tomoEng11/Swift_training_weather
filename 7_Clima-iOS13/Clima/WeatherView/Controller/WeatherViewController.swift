@@ -16,7 +16,6 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchField: UITextField!
 
-
     //MARK: Properties
     var weatherManager = WeatherDataManager()
     let locationManager = CLLocationManager()
@@ -27,6 +26,13 @@ class WeatherViewController: UIViewController {
         locationManager.delegate = self
         weatherManager.delegate = self
         searchField.delegate = self
+
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
+    }
+
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        let vc = CityListViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
