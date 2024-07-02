@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 
 class WeatherViewController: UIViewController {
+    @IBOutlet weak var dadjokeLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -18,18 +19,24 @@ class WeatherViewController: UIViewController {
 
     //MARK: Properties
     var weatherManager = WeatherDataManager()
+    var api = APIManager()
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationManager.delegate = self
-        weatherManager.delegate = self
         searchField.delegate = self
+        api.delegateForJoke = self
+        api.delegateForWeather = self
 
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
     }
-
+    
+    @IBAction func dadjokeButtonPressed(_ sender: UIButton) {
+        api.fetchDadJokeData()
+    }
+    
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         let vc = CityListViewController()
         navigationController?.pushViewController(vc, animated: true)
@@ -48,7 +55,7 @@ extension WeatherViewController: UITextFieldDelegate {
 
     func searchWeather() {
         guard let cityName = searchField.text else { return }
-        weatherManager.fetchWeather(cityName)
+        api.fetchWeather(cityName)
         print("action: search, city: \(cityName)")
     }
 
@@ -109,7 +116,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         let lat = location.coordinate.latitude
         let lon = location.coordinate.longitude
-        weatherManager.fetchWeather(lat, lon)
+        api.fetchWeather(lat, lon)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -123,6 +130,19 @@ private extension WeatherViewController {
             backgroundImage.image = UIImage(named: "AppIcon")
         } else {
             backgroundImage.image = UIImage(named: "background")
+        }
+    }
+}
+
+extension WeatherViewController: DadJokeManagerDelegate {
+    func failedWithErrorForDadJoke(error: any Error) {
+        print(error)
+    }
+    
+    func updateDadJoke(jokeModel: JokeModel) {
+        DispatchQueue.main.async {
+            print("update called for dad")
+            self.dadjokeLabel.text = jokeModel.joke
         }
     }
 }

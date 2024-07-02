@@ -1,25 +1,59 @@
 //
-//  WeatherDataManager.swift
+//  APIClient.swift
 //  Clima
 //
-//  Created by Daegeon Choi on 2020/04/15.
-//  Copyright © 2020 App Brewery. All rights reserved.
+//  Created by 井本智博 on 2024/07/02.
+//  Copyright © 2024 App Brewery. All rights reserved.
 //
 
 import Foundation
 
-//MARK: Delegate protocol
+protocol DadJokeManagerDelegate {
+    func updateDadJoke(jokeModel: JokeModel)
+    func failedWithErrorForDadJoke(error: Error)
+}
+
 protocol WeatherManagerDelegate {
     func updateWeather(weatherModel: WeatherModel)
     func failedWithError(error: Error)
 }
 
-//MARK: DataManager struct
-struct WeatherDataManager {
+struct APIManager {
     let baseURL = "https://api.openweathermap.org/data/2.5/weather?appid=4e415e4ab2aaed09e04d8419beedee19&units=metric"
+    let decoder = JSONDecoder()
 
-    var delegate: WeatherManagerDelegate?
+    var delegateForWeather: WeatherManagerDelegate?
+    var delegateForJoke: DadJokeManagerDelegate?
+}
 
+//MARK: - DADJOKE MANAGER FUNCTION
+extension APIManager {
+
+    func fetchDadJokeData() {
+        let url = URL(string: "https://icanhazdadjoke.com")!
+        var request = URLRequest(url: url)
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard let data = data, error == nil else {
+                self.delegateForJoke?.failedWithErrorForDadJoke(error: error!)
+                return
+            }
+
+            do {
+                let decodedData = try decoder.decode(JokeModel.self, from: data)
+                print(decodedData)
+                self.delegateForJoke?.updateDadJoke(jokeModel: JokeModel(joke: decodedData.joke))
+            } catch {
+                self.delegateForJoke?.failedWithErrorForDadJoke(error: error)
+            }
+        }
+        task.resume()
+    }
+}
+
+//MARK: - WEATHER MANAGER FUNCTIONS
+extension APIManager {
     //MARK:- fetchWeather
     func fetchWeather(_ city: String) {
         let completeURL = "\(baseURL)&q=\(city)"
@@ -49,12 +83,12 @@ struct WeatherDataManager {
             guard error == nil,
                   let safeData = data,
                   let weather = self.parseJSON(weatherData: safeData) else {
-                self.delegate?.failedWithError(error: error!)
+                self.delegateForWeather?.failedWithError(error: error!)
                 return
             }
 
             // "self" is necessery in closure
-            self.delegate?.updateWeather(weatherModel: weather)
+            self.delegateForWeather?.updateWeather(weatherModel: weather)
         }
 
         // what task do: go to url -> grab data -> come back
@@ -66,16 +100,16 @@ struct WeatherDataManager {
 
     // decode JSON
     func parseJSON(weatherData: Data) -> WeatherModel? {
-        let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(WeatherData.self, from: weatherData)
             print("decoded: \(decodedData)")
 
             return WeatherModel(cityName: decodedData.name, conditionId: decodedData.weather[0].id, temperature: decodedData.main.temp)
-
         } catch {
-            delegate?.failedWithError(error: error)
+            delegateForWeather?.failedWithError(error: error)
             return nil
         }
     }
 }
+
+

@@ -100,7 +100,40 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ti-bh-8Fw">
-                                        <rect key="frame" x="134" y="400" width="240" height="414"/>
+                                        <rect key="frame" x="0.0" y="400" width="374" height="414"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSG-Ty-FP1">
+                                                <rect key="frame" x="66.5" y="201" width="241" height="135"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="241" id="7BY-ik-Iow"/>
+                                                    <constraint firstAttribute="height" constant="135" id="wdP-yg-fvF"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4V-2P-AYm">
+                                                <rect key="frame" x="141.5" y="96" width="91" height="35"/>
+                                                <color key="backgroundColor" red="1" green="0.45854175089999999" blue="0.6605013609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="91" id="M9V-bh-w9F"/>
+                                                    <constraint firstAttribute="height" constant="35" id="ccI-65-fw7"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="DadJoke"/>
+                                                <connections>
+                                                    <action selector="dadjokeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gAI-Bt-XA6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="qSG-Ty-FP1" firstAttribute="leading" secondItem="0ti-bh-8Fw" secondAttribute="leading" constant="66.5" id="5bK-je-evg"/>
+                                            <constraint firstAttribute="bottom" secondItem="qSG-Ty-FP1" secondAttribute="bottom" constant="78" id="RkD-4p-UNw"/>
+                                            <constraint firstItem="qSG-Ty-FP1" firstAttribute="centerX" secondItem="x4V-2P-AYm" secondAttribute="centerX" id="Tgg-hd-sBh"/>
+                                            <constraint firstItem="qSG-Ty-FP1" firstAttribute="top" secondItem="x4V-2P-AYm" secondAttribute="bottom" constant="70" id="dqz-5m-kFa"/>
+                                            <constraint firstItem="qSG-Ty-FP1" firstAttribute="centerX" secondItem="0ti-bh-8Fw" secondAttribute="centerX" id="kUA-Lm-CSh"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -126,13 +159,14 @@
                         <outlet property="backgroundImage" destination="kWX-h1-VLT" id="W8k-Qu-oeP"/>
                         <outlet property="cityLabel" destination="CWP-r8-Jsy" id="8cQ-3l-ufV"/>
                         <outlet property="conditionImageView" destination="mYn-vV-MBC" id="gpD-FU-YB0"/>
+                        <outlet property="dadjokeLabel" destination="qSG-Ty-FP1" id="QhJ-PD-48U"/>
                         <outlet property="searchField" destination="2eh-wL-W34" id="Mdn-d0-ZRy"/>
                         <outlet property="temperatureLabel" destination="w9o-tW-03D" id="mF4-vV-JxK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="118"/>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </scene>
     </scenes>
     <resources>
