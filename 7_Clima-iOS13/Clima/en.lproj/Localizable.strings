@@ -11,7 +11,6 @@
 "contentType" = "application/json";
 "get" = "GET";
 "accept" = "ACCEPT";
-"empty" = "";
 
 // Identifier
 "cityListId" = "CityListTableViewCell";
@@ -48,3 +47,7 @@
 
 // Placeholder
 "textFieldPlaceholder" = "Type something here";
+
+// ボタンタイトル
+"dadjoke" = "DadJoke";
+"favorite" = "お気に入り";

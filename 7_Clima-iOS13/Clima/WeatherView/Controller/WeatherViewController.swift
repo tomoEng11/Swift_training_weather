@@ -16,7 +16,9 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchField: UITextField!
-
+    @IBOutlet weak var dadjokeButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     //MARK: Properties
 
     var api = APIManager()
@@ -30,7 +32,10 @@ class WeatherViewController: UIViewController {
         api.delegateForJoke = self
         api.delegateForWeather = self
 
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: R.string.localizable.empty(), style:  .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:  .plain, target: nil, action: nil)
+        dadjokeButton.setTitle(R.string.localizable.dadjoke(), for: .normal)
+        favoriteButton.setTitle(R.string.localizable.favorite(), for: .normal)
+
     }
     
     @IBAction func dadjokeButtonPressed(_ sender: UIButton) {

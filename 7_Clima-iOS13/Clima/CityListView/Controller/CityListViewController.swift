@@ -46,7 +46,7 @@ class CityListViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: R.string.localizable.cityListId(), bundle: nil), forCellReuseIdentifier: R.string.localizable.cityListId())
         navigationItem.title = R.string.localizable.cityListTitle()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:  R.string.localizable.empty(), style:  .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:  .plain, target: nil, action: nil)
     }
 }
 
@@ -58,7 +58,7 @@ extension CityListViewController: UITableViewDelegate {
 
         guard let vc = R.storyboard.cityDetailViewController.instantiateInitialViewController() else { return }
 
-        vc.cityName = cell.label.text ?? R.string.localizable.empty()
+        vc.cityName = cell.label.text ?? ""
         navigationController?.pushViewController(vc, animated: true)
 
     }

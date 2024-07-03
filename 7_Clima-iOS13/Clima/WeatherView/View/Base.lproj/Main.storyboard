@@ -159,7 +159,9 @@
                         <outlet property="backgroundImage" destination="kWX-h1-VLT" id="W8k-Qu-oeP"/>
                         <outlet property="cityLabel" destination="CWP-r8-Jsy" id="8cQ-3l-ufV"/>
                         <outlet property="conditionImageView" destination="mYn-vV-MBC" id="gpD-FU-YB0"/>
+                        <outlet property="dadjokeButton" destination="x4V-2P-AYm" id="qBj-cC-hcn"/>
                         <outlet property="dadjokeLabel" destination="qSG-Ty-FP1" id="QhJ-PD-48U"/>
+                        <outlet property="favoriteButton" destination="6ov-Lz-364" id="k33-qO-ySE"/>
                         <outlet property="searchField" destination="2eh-wL-W34" id="Mdn-d0-ZRy"/>
                         <outlet property="temperatureLabel" destination="w9o-tW-03D" id="mF4-vV-JxK"/>
                     </connections>
