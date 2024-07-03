@@ -19,7 +19,9 @@ protocol WeatherManagerDelegate: AnyObject {
 }
 
 struct APIManager {
-    let baseURL = "https://api.openweathermap.org/data/2.5/weather?appid=4e415e4ab2aaed09e04d8419beedee19&units=metric"
+    let baseURL = R.string.localizable.weatherBaseURL()
+
+//    let baseURL = "https://api.openweathermap.org/data/2.5/weather?appid=4e415e4ab2aaed09e04d8419beedee19&units=metric"
     let decoder = JSONDecoder()
 
     var delegateForWeather: WeatherManagerDelegate?
@@ -30,10 +32,10 @@ struct APIManager {
 extension APIManager {
 
     func fetchDadJokeData() {
-        guard let url = URL(string: "https://icanhazdadjoke.com") else { return }
+        guard let url = URL(string: R.string.localizable.dadjokeBaseURL()) else { return }
         var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpMethod = "GET"
+        request.setValue(R.string.localizable.contentType(), forHTTPHeaderField: R.string.localizable.accept())
+        request.httpMethod = R.string.localizable.get()
         let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
             guard let data = data, error == nil else {
                 self.delegateForJoke?.failedWithErrorForDadJoke(error: error!)

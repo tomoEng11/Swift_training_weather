@@ -1,0 +1,30 @@
+
+/* Class = "UITextField"; placeholder = "Search"; ObjectID = "2eh-wL-W34"; */
+"2eh-wL-W34.placeholder" = "Search";
+
+/* Class = "UIButton"; configuration.title = "お気に入り"; ObjectID = "6ov-Lz-364"; */
+"6ov-Lz-364.configuration.title" = "お気に入り";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6ov-Lz-364"; */
+"6ov-Lz-364.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "London"; ObjectID = "CWP-r8-Jsy"; */
+"CWP-r8-Jsy.text" = "London";
+
+/* Class = "UILabel"; text = "C"; ObjectID = "MHH-vY-Mrb"; */
+"MHH-vY-Mrb.text" = "C";
+
+/* Class = "UILabel"; text = "°"; ObjectID = "N7Y-Fj-S2q"; */
+"N7Y-Fj-S2q.text" = "°";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qSG-Ty-FP1"; */
+"qSG-Ty-FP1.text" = "Label";
+
+/* Class = "UILabel"; text = "21"; ObjectID = "w9o-tW-03D"; */
+"w9o-tW-03D.text" = "21";
+
+/* Class = "UIButton"; configuration.title = "DadJoke"; ObjectID = "x4V-2P-AYm"; */
+"x4V-2P-AYm.configuration.title" = "DadJoke";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "x4V-2P-AYm"; */
+"x4V-2P-AYm.normalTitle" = "Button";

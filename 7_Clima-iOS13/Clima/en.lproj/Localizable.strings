@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  Clima
+
+  Created by 井本智博 on 2024/07/03.
+  Copyright © 2024 App Brewery. All rights reserved.
+*/
+// URL
+"weatherBaseURL" = "https://api.openweathermap.org/data/2.5/weather?appid=4e415e4ab2aaed09e04d8419beedee19&units=metric";
+"dadjokeBaseURL" = "https://icanhazdadjoke.com";
+"contentType" = "application/json";
+"get" = "GET";
+"accept" = "ACCEPT";
+"empty" = "";
+
+// Identifier
+"cityListId" = "CityListTableViewCell";
+"cityListTitle" = "都市一覧";
+
+// CityName
+"eu" = "EU";
+"asia" = "アジア";
+"oceania" = "オセアニア";
+"africa" = "アフリカ";
+"berlin" = "ベルリン";
+"amsterdam" = "アムステルダム";
+"london" = "ロンドン";
+"tokyo" = "東京";
+"bangkok" = "バンコク";
+"sydney" = "シドニー";
+"melbourne" = "メルボルン";
+"capetown" = "ケープタウン";
+"tokyo" = "Tokyo";
+
+// 天気マーク
+"cloudBolt" = "cloud.bolt";
+"cloudDrizzle" = "cloud.drizzle";
+"cloudRain" = "cloud.rain";
+"cloudSnow" = "cloud.snow";
+"cloudFog" = "cloud.fog";
+"sunMax" = "sun.max";
+"cloudBolt" = "cloud.bolt";
+"cloud" = "cloud";
+
+// 矢印マーク
+"chevron" = "chevron.compact.right";
+"appIcon" = "AppIcon";
+
+// Placeholder
+"textFieldPlaceholder" = "Type something here";

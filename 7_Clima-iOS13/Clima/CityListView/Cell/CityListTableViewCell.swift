@@ -23,6 +23,6 @@ class CityListTableViewCell: UITableViewCell {
 
     func set(cityName: String) {
         label.text = cityName
-        imageViewForNext.image = UIImage(systemName: "chevron.compact.right")
+        imageViewForNext.image = UIImage(systemName: R.string.localizable.chevron())
     }
 }

@@ -30,7 +30,7 @@ class WeatherViewController: UIViewController {
         api.delegateForJoke = self
         api.delegateForWeather = self
 
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: R.string.localizable.empty(), style:  .plain, target: nil, action: nil)
     }
     
     @IBAction func dadjokeButtonPressed(_ sender: UIButton) {
@@ -72,9 +72,9 @@ extension WeatherViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         // by using "textField" (not "searchField") this applied to any textField in this Controller(cuz of delegate = self)
         guard let searchText = textField.text,
-              searchText != ""
+              !searchText.isEmpty
         else {
-            textField.placeholder = "Type something here"
+            textField.placeholder = R.string.localizable.textFieldPlaceholder()
             return false
         }
         return true
@@ -126,10 +126,10 @@ extension WeatherViewController: CLLocationManagerDelegate {
 
 private extension WeatherViewController {
     func changeBackground(cityName: String) {
-        if cityName == "Tokyo" {
-            backgroundImage.image = UIImage(named: "AppIcon")
+        if cityName == R.string.localizable.tokyo() {
+            backgroundImage.image = UIImage(named: R.string.localizable.appIcon())
         } else {
-            backgroundImage.image = UIImage(named: "background")
+            backgroundImage.image = UIImage(resource: R.image.background)
         }
     }
 }
@@ -141,7 +141,6 @@ extension WeatherViewController: DadJokeManagerDelegate {
     
     func updateDadJoke(jokeModel: JokeModel) {
         DispatchQueue.main.async {
-            print("update called for dad")
             self.dadjokeLabel.text = jokeModel.joke
         }
     }

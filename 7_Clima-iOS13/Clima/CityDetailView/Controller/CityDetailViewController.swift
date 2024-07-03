@@ -23,6 +23,7 @@ class CityDetailViewController: UIViewController {
         super.viewDidLoad()
         api.delegateForWeather = self
         api.fetchWeather(cityName)
+        self.navigationItem.title = cityName
     }
 }
 

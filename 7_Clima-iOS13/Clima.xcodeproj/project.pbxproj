@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		ADAA27C6231BC02C00365194 /* light_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27C4231BC02B00365194 /* light_background.pdf */; };
 		ADAA27C7231BC02C00365194 /* dark_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27C5231BC02B00365194 /* dark_background.pdf */; };
 		ADAA27CE231BC87F00365194 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27CD231BC87F00365194 /* README.md */; };
+		BB9BB2B72C3560EA005C71DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB9BB2B52C3560EA005C71DF /* Localizable.strings */; };
 		BBC22EEA2C3123EE00B7FA52 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC22EE92C3123EE00B7FA52 /* CityListViewController.swift */; };
 		BBC22EF42C31362700B7FA52 /* CityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC22EF32C31362700B7FA52 /* CityListViewController.xib */; };
 		BBD0082D2C342FBA003D9324 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0082C2C342FBA003D9324 /* JokeModel.swift */; };
@@ -26,6 +27,7 @@
 		BBD0083E2C354657003D9324 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0083D2C354657003D9324 /* CityDetailViewController.swift */; };
 		BBD008422C3549DB003D9324 /* CityDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD008412C3549DB003D9324 /* CityDetailViewController.storyboard */; };
 		BBD008442C355112003D9324 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD008432C355112003D9324 /* RegionModel.swift */; };
+		BBD008472C3556FA003D9324 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = BBD008462C3556FA003D9324 /* RswiftLibrary */; };
 		BBDEC7FB2C3426A800295A3E /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDEC7FA2C3426A800295A3E /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,9 @@
 		ADAA27C4231BC02B00365194 /* light_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = light_background.pdf; sourceTree = "<group>"; };
 		ADAA27C5231BC02B00365194 /* dark_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dark_background.pdf; sourceTree = "<group>"; };
 		ADAA27CD231BC87F00365194 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BB9BB2B62C3560EA005C71DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BB9BB2B82C3561C0005C71DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		BB9BB2B92C3561C0005C71DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BBC22EE92C3123EE00B7FA52 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		BBC22EF32C31362700B7FA52 /* CityListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityListViewController.xib; sourceTree = "<group>"; };
 		BBD0082C2C342FBA003D9324 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBD008472C3556FA003D9324 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAA27B0231BBFAF00365194 /* AppDelegate.swift */,
+				BB9BB2B52C3560EA005C71DF /* Localizable.strings */,
 				ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */,
 				BBDEC7F92C34269400295A3E /* APIClient */,
 				ADAA27CA231BC3FA00365194 /* Model */,
@@ -219,8 +226,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				BBD0084F2C3559FB003D9324 /* PBXTargetDependency */,
 			);
 			name = Clima;
+			packageProductDependencies = (
+				BBD008462C3556FA003D9324 /* RswiftLibrary */,
+			);
 			productName = Clima;
 			productReference = ADAA27AD231BBFAF00365194 /* Clima.app */;
 			productType = "com.apple.product-type.application";
@@ -247,8 +258,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = ADAA27A4231BBFAF00365194;
+			packageReferences = (
+				BBD008452C3556FA003D9324 /* XCRemoteSwiftPackageReference "R" */,
+			);
 			productRefGroup = ADAA27AE231BBFAF00365194 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -268,6 +283,7 @@
 				BBD008332C351561003D9324 /* CityListTableViewCell.xib in Resources */,
 				BBD008422C3549DB003D9324 /* CityDetailViewController.storyboard in Resources */,
 				ADAA27BD231BBFB300365194 /* LaunchScreen.storyboard in Resources */,
+				BB9BB2B72C3560EA005C71DF /* Localizable.strings in Resources */,
 				ADAA27BA231BBFB300365194 /* Assets.xcassets in Resources */,
 				ADAA27B8231BBFAF00365194 /* Main.storyboard in Resources */,
 				ADAA27C6231BC02C00365194 /* light_background.pdf in Resources */,
@@ -298,11 +314,19 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		BBD0084F2C3559FB003D9324 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BBD0084E2C3559FB003D9324 /* RswiftGenerateInternalResources */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		ADAA27B6231BBFAF00365194 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				ADAA27B7231BBFAF00365194 /* Base */,
+				BB9BB2B82C3561C0005C71DF /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -315,6 +339,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		BB9BB2B52C3560EA005C71DF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB9BB2B62C3560EA005C71DF /* en */,
+				BB9BB2B92C3561C0005C71DF /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -322,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -382,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -490,6 +525,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BBD008452C3556FA003D9324 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BBD008462C3556FA003D9324 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBD008452C3556FA003D9324 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		BBD0084E2C3559FB003D9324 /* RswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "plugin:RswiftGenerateInternalResources";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADAA27A5231BBFAF00365194 /* Project object */;
 }
