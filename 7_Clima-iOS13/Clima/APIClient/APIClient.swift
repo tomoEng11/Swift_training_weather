@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol DadJokeManagerDelegate {
+protocol DadJokeManagerDelegate: AnyObject {
     func updateDadJoke(jokeModel: JokeModel)
     func failedWithErrorForDadJoke(error: Error)
 }
 
-protocol WeatherManagerDelegate {
+protocol WeatherManagerDelegate: AnyObject {
     func updateWeather(weatherModel: WeatherModel)
     func failedWithError(error: Error)
 }
@@ -30,11 +30,11 @@ struct APIManager {
 extension APIManager {
 
     func fetchDadJokeData() {
-        let url = URL(string: "https://icanhazdadjoke.com")!
+        guard let url = URL(string: "https://icanhazdadjoke.com") else { return }
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
             guard let data = data, error == nil else {
                 self.delegateForJoke?.failedWithErrorForDadJoke(error: error!)
                 return
@@ -42,7 +42,6 @@ extension APIManager {
 
             do {
                 let decodedData = try decoder.decode(JokeModel.self, from: data)
-                print(decodedData)
                 self.delegateForJoke?.updateDadJoke(jokeModel: JokeModel(joke: decodedData.joke))
             } catch {
                 self.delegateForJoke?.failedWithErrorForDadJoke(error: error)
@@ -76,17 +75,13 @@ extension APIManager {
         let session = URLSession(configuration: .default)
 
         // 3. Give the session with task
-        let task = session.dataTask(with: url) { (data, response, error) in
+        let task = session.dataTask(with: url) {(data, response, error) in
             // error check
             // Decode JSON
 
             guard error == nil,
                   let safeData = data,
-                  let weather = self.parseJSON(weatherData: safeData) else {
-                self.delegateForWeather?.failedWithError(error: error!)
-                return
-            }
-
+                  let weather = self.parseJSON(weatherData: safeData) else { return }
             // "self" is necessery in closure
             self.delegateForWeather?.updateWeather(weatherModel: weather)
         }
@@ -111,5 +106,3 @@ extension APIManager {
         }
     }
 }
-
-

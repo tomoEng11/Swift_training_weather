@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityListViewController" customModule="Clima" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="5rm-rQ-g4j" id="Jwp-Ya-wHP"/>
                 <outlet property="view" destination="iN0-l3-epB" id="fLY-Cv-4zn"/>
             </connections>
         </placeholder>
@@ -18,12 +19,27 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5rm-rQ-g4j">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemYellowColor"/>
-            <point key="canvasLocation" x="69" y="20"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5rm-rQ-g4j" secondAttribute="bottom" id="Fzm-zH-nQm"/>
+                <constraint firstItem="5rm-rQ-g4j" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="K1i-9a-A4K"/>
+                <constraint firstItem="5rm-rQ-g4j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mFF-nd-iZ8"/>
+                <constraint firstItem="5rm-rQ-g4j" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="vDw-OW-Nun"/>
+            </constraints>
+            <point key="canvasLocation" x="67.938931297709928" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

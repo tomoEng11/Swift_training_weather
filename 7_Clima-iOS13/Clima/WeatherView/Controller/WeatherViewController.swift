@@ -18,7 +18,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var searchField: UITextField!
 
     //MARK: Properties
-    var weatherManager = WeatherDataManager()
+
     var api = APIManager()
     let locationManager = CLLocationManager()
 
