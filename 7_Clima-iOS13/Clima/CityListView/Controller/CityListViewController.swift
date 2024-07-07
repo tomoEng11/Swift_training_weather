@@ -63,6 +63,10 @@ extension CityListViewController: UITableViewDelegate {
 
     }
 
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = .systemGray6
+    }
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UITableViewHeaderFooterView()
        
@@ -83,7 +87,6 @@ extension CityListViewController: UITableViewDelegate {
         tableView.reloadSections([section], with: .automatic)
         tableView.endUpdates()
     }
-
 }
 
 extension CityListViewController: UITableViewDataSource {
