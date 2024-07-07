@@ -18,10 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: scene)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+        guard let vc = R.storyboard.main.instantiateInitialViewController() else { return }
         let nav = UINavigationController(rootViewController: vc)
-
         window.rootViewController = nav
         window.makeKeyAndVisible()
         self.window = window

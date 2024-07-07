@@ -10,26 +10,38 @@ import UIKit
 import CoreLocation
 
 class WeatherViewController: UIViewController {
+    @IBOutlet weak var dadjokeLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var conditionImageView: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchField: UITextField!
-
+    @IBOutlet weak var dadjokeButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     //MARK: Properties
-    var weatherManager = WeatherDataManager()
+
+    var api = APIManager()
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationManager.delegate = self
-        weatherManager.delegate = self
         searchField.delegate = self
+        api.delegateForJoke = self
+        api.delegateForWeather = self
 
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title:  "", style:  .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:  .plain, target: nil, action: nil)
+        dadjokeButton.setTitle(R.string.localizable.dadjoke(), for: .normal)
+        favoriteButton.setTitle(R.string.localizable.favorite(), for: .normal)
+
     }
-
+    
+    @IBAction func dadjokeButtonPressed(_ sender: UIButton) {
+        api.fetchDadJokeData()
+    }
+    
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         let vc = CityListViewController()
         navigationController?.pushViewController(vc, animated: true)
@@ -48,7 +60,7 @@ extension WeatherViewController: UITextFieldDelegate {
 
     func searchWeather() {
         guard let cityName = searchField.text else { return }
-        weatherManager.fetchWeather(cityName)
+        api.fetchWeather(cityName)
         print("action: search, city: \(cityName)")
     }
 
@@ -65,9 +77,9 @@ extension WeatherViewController: UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         // by using "textField" (not "searchField") this applied to any textField in this Controller(cuz of delegate = self)
         guard let searchText = textField.text,
-              searchText != ""
+              !searchText.isEmpty
         else {
-            textField.placeholder = "Type something here"
+            textField.placeholder = R.string.localizable.textFieldPlaceholder()
             return false
         }
         return true
@@ -109,7 +121,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         let lat = location.coordinate.latitude
         let lon = location.coordinate.longitude
-        weatherManager.fetchWeather(lat, lon)
+        api.fetchWeather(lat, lon)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -119,10 +131,22 @@ extension WeatherViewController: CLLocationManagerDelegate {
 
 private extension WeatherViewController {
     func changeBackground(cityName: String) {
-        if cityName == "Tokyo" {
-            backgroundImage.image = UIImage(named: "AppIcon")
+        if cityName == R.string.localizable.tokyo() {
+            backgroundImage.image = UIImage(named: R.string.localizable.appIcon())
         } else {
-            backgroundImage.image = UIImage(named: "background")
+            backgroundImage.image = UIImage(resource: R.image.background)
+        }
+    }
+}
+
+extension WeatherViewController: DadJokeManagerDelegate {
+    func failedWithErrorForDadJoke(error: any Error) {
+        print(error)
+    }
+    
+    func updateDadJoke(jokeModel: JokeModel) {
+        DispatchQueue.main.async {
+            self.dadjokeLabel.text = jokeModel.joke
         }
     }
 }

@@ -13,33 +13,32 @@ struct WeatherModel {
     let conditionId: Int
     let temperature: Double
     
-    var temperatureString: String{
+    var temperatureString: String {
         return String.init(format: "%.1f", temperature)
     }
-    
+
     // computed property
     var conditionName: String {
         // docs https://openweathermap.org/weather-conditions
         switch conditionId/100 {
         case 2:
-            return "cloud.bolt"
+            return R.string.localizable.cloudBolt()
         case 3:
-            return "cloud.drizzle"
+            return R.string.localizable.cloudDrizzle()
         case 5:
-            return "cloud.rain"
+            return R.string.localizable.cloudRain()
         case 6:
-            return "cloud.snow"
+            return R.string.localizable.cloudSnow()
         case 7:
-            return "cloud.fog"
+            return R.string.localizable.cloudFog()
         case 8:
             if conditionId == 800 {
-                return "sun.max"
+                return R.string.localizable.sunMax()
             } else {
-                return "cloud.bolt"
+                return R.string.localizable.cloudBolt()
             }
         default:
-            return "cloud"
+            return R.string.localizable.cloud()
         }
     }
-    
 }
