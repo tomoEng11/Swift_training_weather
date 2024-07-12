@@ -17,12 +17,12 @@ class CityDetailViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     
     var cityName: String!
-    var api = APIManager()
+    var weatherManager = WeatherManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        api.delegateForWeather = self
-        api.fetchWeather(cityName)
+        weatherManager.delegate = self
+        weatherManager.fetch(cityName)
         self.navigationItem.title = cityName
     }
 }

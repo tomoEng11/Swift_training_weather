@@ -21,16 +21,18 @@ class WeatherViewController: UIViewController {
     
     //MARK: Properties
 
-    var api = APIManager()
     let locationManager = CLLocationManager()
+    var dadJokeManager = DadJokeManager()
+    var weatherManager = WeatherManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         locationManager.delegate = self
         searchField.delegate = self
-        api.delegateForJoke = self
-        api.delegateForWeather = self
+        dadJokeManager.delegate = self
+        weatherManager.delegate = self
+
 
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style:  .plain, target: nil, action: nil)
         dadjokeButton.setTitle(R.string.localizable.dadjoke(), for: .normal)
@@ -39,7 +41,7 @@ class WeatherViewController: UIViewController {
     }
     
     @IBAction func dadjokeButtonPressed(_ sender: UIButton) {
-        api.fetchDadJokeData()
+        dadJokeManager.fetch()
     }
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
@@ -54,13 +56,12 @@ extension WeatherViewController: UITextFieldDelegate {
     @IBAction func searchBtnClicked(_ sender: UIButton) {
         searchField.endEditing(true)    //dismiss keyboard
         print(searchField.text!)
-
         searchWeather()
     }
 
     func searchWeather() {
         guard let cityName = searchField.text else { return }
-        api.fetchWeather(cityName)
+        weatherManager.fetch(cityName)
         print("action: search, city: \(cityName)")
     }
 
@@ -75,7 +76,6 @@ extension WeatherViewController: UITextFieldDelegate {
 
     // when textfield deselected
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        // by using "textField" (not "searchField") this applied to any textField in this Controller(cuz of delegate = self)
         guard let searchText = textField.text,
               !searchText.isEmpty
         else {
@@ -85,10 +85,7 @@ extension WeatherViewController: UITextFieldDelegate {
         return true
     }
 
-    // when textfield stop editing (keyboard dismissed)
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        //        searchField.text = ""   // clear textField
-    }
+    func textFieldDidEndEditing(_ textField: UITextField) {}
 }
 
 //MARK:- View update extension
@@ -112,7 +109,6 @@ extension WeatherViewController: WeatherManagerDelegate {
 extension WeatherViewController: CLLocationManagerDelegate {
 
     @IBAction func locationButtonClicked(_ sender: UIButton) {
-        // Get permission
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
@@ -121,7 +117,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
         guard let location = locations.last else { return }
         let lat = location.coordinate.latitude
         let lon = location.coordinate.longitude
-        api.fetchWeather(lat, lon)
+        weatherManager.fetch(lat, lon)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -140,10 +136,7 @@ private extension WeatherViewController {
 }
 
 extension WeatherViewController: DadJokeManagerDelegate {
-    func failedWithErrorForDadJoke(error: any Error) {
-        print(error)
-    }
-    
+
     func updateDadJoke(jokeModel: JokeModel) {
         DispatchQueue.main.async {
             self.dadjokeLabel.text = jokeModel.joke
