@@ -18,6 +18,8 @@
 		ADAA27C6231BC02C00365194 /* light_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27C4231BC02B00365194 /* light_background.pdf */; };
 		ADAA27C7231BC02C00365194 /* dark_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27C5231BC02B00365194 /* dark_background.pdf */; };
 		ADAA27CE231BC87F00365194 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27CD231BC87F00365194 /* README.md */; };
+		BB0175862C8C366800B9ED93 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BB0175852C8C366800B9ED93 /* FirebaseMessaging */; };
+		BB0175962C8F058100B9ED93 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB0175952C8F058100B9ED93 /* GoogleService-Info.plist */; };
 		BB9BB2B72C3560EA005C71DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB9BB2B52C3560EA005C71DF /* Localizable.strings */; };
 		BBBA3B0C2C3E8B2100C0AFC0 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA3B0B2C3E8B2100C0AFC0 /* WeatherManager.swift */; };
 		BBC22EEA2C3123EE00B7FA52 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC22EE92C3123EE00B7FA52 /* CityListViewController.swift */; };
@@ -30,7 +32,6 @@
 		BBD008442C355112003D9324 /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD008432C355112003D9324 /* RegionModel.swift */; };
 		BBD008472C3556FA003D9324 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = BBD008462C3556FA003D9324 /* RswiftLibrary */; };
 		BBD052382C832A1B00E11E3B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BBD052372C832A1B00E11E3B /* FirebaseAuth */; };
-		BBD0523B2C832C5100E11E3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBD0523A2C832C5100E11E3B /* GoogleService-Info.plist */; };
 		BBD0523D2C832C8600E11E3B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BBD0523C2C832C8600E11E3B /* FirebaseAnalytics */; };
 		BBD052412C832D6C00E11E3B /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBD052402C832D6C00E11E3B /* LoginVC.xib */; };
 		BBD052422C832D6C00E11E3B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD0523F2C832D6C00E11E3B /* LoginVC.swift */; };
@@ -54,6 +55,8 @@
 		ADAA27C4231BC02B00365194 /* light_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = light_background.pdf; sourceTree = "<group>"; };
 		ADAA27C5231BC02B00365194 /* dark_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dark_background.pdf; sourceTree = "<group>"; };
 		ADAA27CD231BC87F00365194 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BB01758E2C8C4C3E00B9ED93 /* ClimaDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClimaDebug.entitlements; sourceTree = "<group>"; };
+		BB0175952C8F058100B9ED93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB9BB2B62C3560EA005C71DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB9BB2B82C3561C0005C71DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		BB9BB2B92C3561C0005C71DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -66,7 +69,6 @@
 		BBD0083D2C354657003D9324 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		BBD008412C3549DB003D9324 /* CityDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityDetailViewController.storyboard; sourceTree = "<group>"; };
 		BBD008432C355112003D9324 /* RegionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
-		BBD0523A2C832C5100E11E3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBD0523F2C832D6C00E11E3B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BBD052402C832D6C00E11E3B /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		BBD052442C83357F00E11E3B /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0175862C8C366800B9ED93 /* FirebaseMessaging in Frameworks */,
 				BBD008472C3556FA003D9324 /* RswiftLibrary in Frameworks */,
 				BBD052382C832A1B00E11E3B /* FirebaseAuth in Frameworks */,
 				BBD0523D2C832C8600E11E3B /* FirebaseAnalytics in Frameworks */,
@@ -109,7 +112,8 @@
 		ADAA27AF231BBFAF00365194 /* Clima */ = {
 			isa = PBXGroup;
 			children = (
-				BBD0523A2C832C5100E11E3B /* GoogleService-Info.plist */,
+				BB0175952C8F058100B9ED93 /* GoogleService-Info.plist */,
+				BB01758E2C8C4C3E00B9ED93 /* ClimaDebug.entitlements */,
 				ADAA27B0231BBFAF00365194 /* AppDelegate.swift */,
 				BB9BB2B52C3560EA005C71DF /* Localizable.strings */,
 				ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */,
@@ -274,6 +278,7 @@
 				BBD008462C3556FA003D9324 /* RswiftLibrary */,
 				BBD052372C832A1B00E11E3B /* FirebaseAuth */,
 				BBD0523C2C832C8600E11E3B /* FirebaseAnalytics */,
+				BB0175852C8C366800B9ED93 /* FirebaseMessaging */,
 			);
 			productName = Clima;
 			productReference = ADAA27AD231BBFAF00365194 /* Clima.app */;
@@ -322,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB0175962C8F058100B9ED93 /* GoogleService-Info.plist in Resources */,
 				ADAA27CE231BC87F00365194 /* README.md in Resources */,
 				ADAA27C7231BC02C00365194 /* dark_background.pdf in Resources */,
 				BBD008332C351561003D9324 /* CityListTableViewCell.xib in Resources */,
@@ -332,7 +338,6 @@
 				BBD052412C832D6C00E11E3B /* LoginVC.xib in Resources */,
 				ADAA27BA231BBFB300365194 /* Assets.xcassets in Resources */,
 				ADAA27B8231BBFAF00365194 /* Main.storyboard in Resources */,
-				BBD0523B2C832C5100E11E3B /* GoogleService-Info.plist in Resources */,
 				ADAA27C6231BC02C00365194 /* light_background.pdf in Resources */,
 				BBC22EF42C31362700B7FA52 /* CityListViewController.xib in Resources */,
 			);
@@ -453,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -508,7 +513,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -522,14 +527,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Clima/ClimaDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67ZRFNK38N;
 				INFOPLIST_FILE = Clima/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tomohiro.weatherapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomohiro.weatherapps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -543,6 +550,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67ZRFNK38N;
 				INFOPLIST_FILE = Clima/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -597,6 +605,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB0175852C8C366800B9ED93 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBD052362C832A1B00E11E3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
 		BBD008462C3556FA003D9324 /* RswiftLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BBD008452C3556FA003D9324 /* XCRemoteSwiftPackageReference "R" */;
