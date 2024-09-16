@@ -23,6 +23,7 @@
 		BB2852A72C97388100ED9D0E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BB2852A62C97388100ED9D0E /* FirebaseAuth */; };
 		BB2852A92C97388100ED9D0E /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BB2852A82C97388100ED9D0E /* FirebaseMessaging */; };
 		BB2852AB2C97388100ED9D0E /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = BB2852AA2C97388100ED9D0E /* FirebaseRemoteConfig */; };
+		BB2852B22C97D21E00ED9D0E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2852B12C97D21E00ED9D0E /* UIViewController+Extension.swift */; };
 		BB9BB2B72C3560EA005C71DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB9BB2B52C3560EA005C71DF /* Localizable.strings */; };
 		BBBA3B0C2C3E8B2100C0AFC0 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA3B0B2C3E8B2100C0AFC0 /* WeatherManager.swift */; };
 		BBC22EEA2C3123EE00B7FA52 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC22EE92C3123EE00B7FA52 /* CityListViewController.swift */; };
@@ -58,6 +59,7 @@
 		ADAA27CD231BC87F00365194 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BB01758E2C8C4C3E00B9ED93 /* ClimaDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClimaDebug.entitlements; sourceTree = "<group>"; };
 		BB0175952C8F058100B9ED93 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BB2852B12C97D21E00ED9D0E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BB9BB2B62C3560EA005C71DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB9BB2B82C3561C0005C71DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		BB9BB2B92C3561C0005C71DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		ADAA27AF231BBFAF00365194 /* Clima */ = {
 			isa = PBXGroup;
 			children = (
+				BB2852AF2C97D20600ED9D0E /* Extensions */,
 				BB0175952C8F058100B9ED93 /* GoogleService-Info.plist */,
 				BB01758E2C8C4C3E00B9ED93 /* ClimaDebug.entitlements */,
 				ADAA27B0231BBFAF00365194 /* AppDelegate.swift */,
@@ -162,6 +165,14 @@
 				BBD008432C355112003D9324 /* RegionModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BB2852AF2C97D20600ED9D0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BB2852B12C97D21E00ED9D0E /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BBC22EDE2C311CD700B7FA52 /* WeatherView */ = {
@@ -353,6 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2852B22C97D21E00ED9D0E /* UIViewController+Extension.swift in Sources */,
 				7D6425982451AEA500F1DD90 /* WeatherData.swift in Sources */,
 				BBD008342C351561003D9324 /* CityListTableViewCell.swift in Sources */,
 				BBD052422C832D6C00E11E3B /* LoginVC.swift in Sources */,

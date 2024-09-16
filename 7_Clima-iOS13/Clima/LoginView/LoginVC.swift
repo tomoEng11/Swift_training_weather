@@ -18,6 +18,10 @@ final class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // タップジェスチャーを作成
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        // ビューに追加
+        view.addGestureRecognizer(tapGesture)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -44,3 +48,5 @@ final class LoginVC: UIViewController {
         }
     }
 }
+
+
