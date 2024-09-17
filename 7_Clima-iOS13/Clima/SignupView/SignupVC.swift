@@ -17,6 +17,10 @@ class SignupVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // タップジェスチャーを作成
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        // ビューに追加
+        view.addGestureRecognizer(tapGesture)
     }
 
     @IBAction func emailTextField(_ sender: UITextField) {
@@ -33,3 +37,4 @@ class SignupVC: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
 }
+
