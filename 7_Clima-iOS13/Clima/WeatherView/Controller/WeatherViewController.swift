@@ -42,6 +42,7 @@ class WeatherViewController: UIViewController {
     
     @IBAction func dadjokeButtonPressed(_ sender: UIButton) {
         dadJokeManager.fetch()
+        AnalyticsManager.shared.logEventForTapDadJoke(event: #function, parameters: [:])
     }
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
