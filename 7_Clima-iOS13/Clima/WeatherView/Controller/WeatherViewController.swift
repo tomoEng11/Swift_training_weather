@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import FirebaseAnalytics
 
 
 class WeatherViewController: UIViewController {
@@ -100,7 +101,9 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.conditionImageView.image = UIImage(systemName: weatherModel.conditionName)
             self.changeBackground(cityName: weatherModel.cityName)
         }
-        AnalyticsManager.shared.logEvent(name: "WaehterVC_updateWeather")
+        Analytics.logEvent("updateWeather", parameters: [
+            "city" : "\(weatherModel.cityName)",
+        ])
 
     }
 
