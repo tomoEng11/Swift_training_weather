@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreLocation
+import FirebaseAnalytics
+
 
 class WeatherViewController: UIViewController {
     @IBOutlet weak var dadjokeLabel: UILabel!
@@ -42,6 +44,7 @@ class WeatherViewController: UIViewController {
     
     @IBAction func dadjokeButtonPressed(_ sender: UIButton) {
         dadJokeManager.fetch()
+        AnalyticsManager.shared.logEventForTapDadJoke(event: #function, parameters: [:])
     }
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
@@ -98,6 +101,10 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.conditionImageView.image = UIImage(systemName: weatherModel.conditionName)
             self.changeBackground(cityName: weatherModel.cityName)
         }
+        Analytics.logEvent("updateWeather", parameters: [
+            "city" : "\(weatherModel.cityName)",
+        ])
+
     }
 
     func failedWithError(error: Error) {
