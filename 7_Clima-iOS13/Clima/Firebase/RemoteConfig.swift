@@ -39,9 +39,9 @@ class RemoteConfigManager {
     }
 
     private func checkVersion() -> Bool {
-        let currentVersion = remoteConfig.configValue(forKey: "current_version").stringValue ?? ""
+        let forceUpdateVer = remoteConfig.configValue(forKey: "force_update").stringValue ?? ""
         let localVersionString = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        return currentVersion != localVersionString
+        return forceUpdateVer >= localVersionString
     }
 
     private func showUpdateAlertIfNeeded() {
