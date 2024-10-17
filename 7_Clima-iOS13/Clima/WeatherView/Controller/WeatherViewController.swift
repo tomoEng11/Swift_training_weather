@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 
+
 class WeatherViewController: UIViewController {
     @IBOutlet weak var dadjokeLabel: UILabel!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -99,6 +100,8 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.conditionImageView.image = UIImage(systemName: weatherModel.conditionName)
             self.changeBackground(cityName: weatherModel.cityName)
         }
+        AnalyticsManager.shared.logEvent(name: "WaehterVC_updateWeather")
+
     }
 
     func failedWithError(error: Error) {

@@ -55,10 +55,7 @@ class RemoteConfigManager {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
 
-        let laterAction = UIAlertAction(title: "あとで", style: .cancel, handler: nil)
-
         alertController.addAction(updateAction)
-        alertController.addAction(laterAction)
         rootViewController.present(alertController, animated: true, completion: nil)
     }
 

@@ -9,12 +9,17 @@
 import Foundation
 import FirebaseAnalytics
 
-class AnalyticsManager {
-    private init(){}
+final class AnalyticsManager {
     static let shared = AnalyticsManager()
+    private init(){}
+
 
     func logEventForTapDadJoke(event: String, parameters : [String:Any]) {
         Analytics.logEvent(event, parameters: parameters)
         print(event, parameters)
+    }
+
+    func logEvent(name: String, params: [String:Any]? = nil) {
+        Analytics.logEvent(name, parameters: params)
     }
 }

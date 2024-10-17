@@ -27,6 +27,8 @@
 		BB2852B22C97D21E00ED9D0E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2852B12C97D21E00ED9D0E /* UIViewController+Extension.swift */; };
 		BB69A8C52C9F11D80095F702 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69A8C42C9F11D80095F702 /* RemoteConfig.swift */; };
 		BB9BB2B72C3560EA005C71DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB9BB2B52C3560EA005C71DF /* Localizable.strings */; };
+		BBBA060C2CBCC92B007E7181 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = BBBA060B2CBCC92B007E7181 /* AppsFlyerLib */; };
+		BBBA06132CC12797007E7181 /* Confidential.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA06122CC12797007E7181 /* Confidential.swift */; };
 		BBBA3B0C2C3E8B2100C0AFC0 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA3B0B2C3E8B2100C0AFC0 /* WeatherManager.swift */; };
 		BBC22EEA2C3123EE00B7FA52 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC22EE92C3123EE00B7FA52 /* CityListViewController.swift */; };
 		BBC22EF42C31362700B7FA52 /* CityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBC22EF32C31362700B7FA52 /* CityListViewController.xib */; };
@@ -67,6 +69,8 @@
 		BB9BB2B62C3560EA005C71DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BB9BB2B82C3561C0005C71DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		BB9BB2B92C3561C0005C71DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BBBA06102CBD4373007E7181 /* Clima.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clima.entitlements; sourceTree = "<group>"; };
+		BBBA06122CC12797007E7181 /* Confidential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Confidential.swift; sourceTree = "<group>"; };
 		BBBA3B0B2C3E8B2100C0AFC0 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		BBC22EE92C3123EE00B7FA52 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 		BBC22EF32C31362700B7FA52 /* CityListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityListViewController.xib; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				BB2852A72C97388100ED9D0E /* FirebaseAuth in Frameworks */,
 				BBD008472C3556FA003D9324 /* RswiftLibrary in Frameworks */,
 				BB2852AB2C97388100ED9D0E /* FirebaseRemoteConfig in Frameworks */,
+				BBBA060C2CBCC92B007E7181 /* AppsFlyerLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +125,7 @@
 		ADAA27AF231BBFAF00365194 /* Clima */ = {
 			isa = PBXGroup;
 			children = (
+				BBBA06102CBD4373007E7181 /* Clima.entitlements */,
 				BB273C592C9FB2DA00C63C70 /* GoogleService-Info.plist */,
 				BB69A8C32C9F11C40095F702 /* Firebase */,
 				BB2852AF2C97D20600ED9D0E /* Extensions */,
@@ -127,6 +133,7 @@
 				ADAA27B0231BBFAF00365194 /* AppDelegate.swift */,
 				BB9BB2B52C3560EA005C71DF /* Localizable.strings */,
 				ADAA27B2231BBFAF00365194 /* SceneDelegate.swift */,
+				BBBA06122CC12797007E7181 /* Confidential.swift */,
 				BBDEC7F92C34269400295A3E /* APIClient */,
 				ADAA27CA231BC3FA00365194 /* Model */,
 				BBD052432C83352C00E11E3B /* SignupView */,
@@ -307,6 +314,7 @@
 				BB2852A62C97388100ED9D0E /* FirebaseAuth */,
 				BB2852A82C97388100ED9D0E /* FirebaseMessaging */,
 				BB2852AA2C97388100ED9D0E /* FirebaseRemoteConfig */,
+				BBBA060B2CBCC92B007E7181 /* AppsFlyerLib */,
 			);
 			productName = Clima;
 			productReference = ADAA27AD231BBFAF00365194 /* Clima.app */;
@@ -340,6 +348,7 @@
 			packageReferences = (
 				BBD008452C3556FA003D9324 /* XCRemoteSwiftPackageReference "R" */,
 				BB2852A32C97388100ED9D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BBBA060A2CBCC92B007E7181 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
 			);
 			productRefGroup = ADAA27AE231BBFAF00365194 /* Products */;
 			projectDirPath = "";
@@ -386,6 +395,7 @@
 				BBD052422C832D6C00E11E3B /* LoginVC.swift in Sources */,
 				BBD177772C3BDFF2008ED204 /* DadJokeManager.swift in Sources */,
 				BBD0083E2C354657003D9324 /* CityDetailViewController.swift in Sources */,
+				BBBA06132CC12797007E7181 /* Confidential.swift in Sources */,
 				ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */,
 				BBD052472C83357F00E11E3B /* SignupVC.swift in Sources */,
 				BBD008442C355112003D9324 /* RegionModel.swift in Sources */,
@@ -579,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Clima/Clima.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 67ZRFNK38N;
 				INFOPLIST_FILE = Clima/Info.plist;
@@ -627,6 +638,14 @@
 				minimumVersion = 11.2.0;
 			};
 		};
+		BBBA060A2CBCC92B007E7181 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.15.3;
+			};
+		};
 		BBD008452C3556FA003D9324 /* XCRemoteSwiftPackageReference "R" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mac-cain13/R.swift";
@@ -657,6 +676,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BB2852A32C97388100ED9D0E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfig;
+		};
+		BBBA060B2CBCC92B007E7181 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BBBA060A2CBCC92B007E7181 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
 		};
 		BBD008462C3556FA003D9324 /* RswiftLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
