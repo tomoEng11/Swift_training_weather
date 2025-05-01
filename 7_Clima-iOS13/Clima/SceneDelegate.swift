@@ -7,13 +7,20 @@
 //
 
 import UIKit
+import AppsFlyerLib
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+
+        // Processing Universal Link from the killed state
+        if let userActivity = connectionOptions.userActivities.first {
+            AppsFlyerLib.shared().continue(userActivity, restorationHandler: nil)
+        } else if let url = connectionOptions.urlContexts.first?.url {
+            AppsFlyerLib.shared().handleOpen(url, options: nil)
+        }
 
         guard let scene = (scene as? UIWindowScene) else { return }
 
@@ -53,6 +60,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+          AppsFlyerLib.shared().continue(userActivity, restorationHandler: nil)
+    }
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+          if let url = URLContexts.first?.url {
+              AppsFlyerLib.shared().handleOpen(url, options: nil)
+          }
+    }
 }
 
